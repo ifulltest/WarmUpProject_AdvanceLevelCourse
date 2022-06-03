@@ -9,6 +9,12 @@ class BasicGetScript_Open_sequencesteps extends Simulation {
 
   val httpConf = http.baseUrl("http://newtours.demoaut.com")
 
+  /*
+    5 users simultaneously arrive at first
+    Nothing happens for 10 seconds
+    In another 30 seconds 200 users arrive
+    Further to that, 10 users arrive in another 30 seconds
+  */
   val scn = scenario("basicgetscenario").forever() {
     pace(2)
       .exec(http("basicgetrequest").get("/mercurycruise.php"))
@@ -20,10 +26,3 @@ class BasicGetScript_Open_sequencesteps extends Simulation {
     .protocols(httpConf).maxDuration(70 seconds)
 
 }
-/*
-
-5 users simultaneously arrive at first
-Nothing happens for 10 seconds
-In another 30 seconds  200 users arrive
-Further to that, 10 users arrive in another 30 seconds
-*/

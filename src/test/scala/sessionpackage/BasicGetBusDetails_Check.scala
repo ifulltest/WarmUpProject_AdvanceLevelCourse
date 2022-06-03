@@ -18,6 +18,8 @@ class BasicGetBusDetails_Check extends Simulation {
   val scn = scenario("GetBusDetails").feed(csvfeeder_bus)
     .exec(http("getbusrequest").get("/api/bus/search/?app_id="+ appId+"&app_key="+ appKey+"&format=json&source=${source}&destination=${destination}&dateofdeparture="+ dateofDepart)
     .check(jsonPath("$.data..skey").find.saveAs("searchKey")))
+//     .check(jsonPath("$.data..skey").find(occurrence = 5).saveAs("searchKey")))
+//     .check(jsonPath("$.data..skey").findAll.saveAs("searchKey")))
       .exec(session =>
       {
         println(session)

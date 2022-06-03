@@ -19,4 +19,7 @@ class BasicGetBusDetails extends Simulation {
     .exec(http("getbusrequest").get("/api/bus/search/?app_id="+ appId+"&app_key="+ appKey+"&format=json&source=${source}&destination=${destination}&dateofdeparture="+ dateofDepart))
 
   setUp(scn.inject(atOnceUsers(2))).protocols(httpConf)
+    .assertions(
+      global.successfulRequests.percent.is(100)
+    )
 }

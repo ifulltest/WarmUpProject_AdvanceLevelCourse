@@ -1,0 +1,10 @@
+{
+  "simulation": "sessionpackage.BasicGetBusDetails",
+  "simulationId": "basicgetbusdetails",
+  "start": 1654233649959,
+  "description": "",
+  "scenarios": ["GetBusDetails"],
+  "assertions": [
+
+  ]
+}

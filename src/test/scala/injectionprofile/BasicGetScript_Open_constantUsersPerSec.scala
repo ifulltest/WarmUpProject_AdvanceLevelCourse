@@ -9,6 +9,9 @@ class BasicGetScript_Open_constantUsersPerSec extends Simulation {
 
   val httpConf = http.baseUrl("http://newtours.demoaut.com")
 
+  /*1 user arrives every 2 seconds
+  * All the users run for 40 seconds
+  * Each user runs with a time interval of 2 seconds in each iteration*/
   val scn = scenario("basicgetscenario").forever() {
     pace(2)
       .exec(http("basicgetrequest").get("/mercurycruise.php"))

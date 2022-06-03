@@ -21,7 +21,13 @@ class SSE_Example1 extends Simulation {
 
   val scn = scenario("sse_scenario")
     .exec(sse("sse_req").connect("/sse/stocks.php")
-      .await(50 seconds)(sse.checkMessage("check_connect").check(regex(".*.*").exists)))
+
+//    .await(50 seconds)(sse.checkMessage("check_connect").check(regex(".*.*").saveAs("myresponse"))))
+//    .exec(session => {
+//      println(session("myresponse").as[String])
+//      session
+//    })
+    .await(50 seconds)(sse.checkMessage("check_connect").check(regex(".*.*").exists)))
 
     .pause(5 seconds)
     .repeat(6) {

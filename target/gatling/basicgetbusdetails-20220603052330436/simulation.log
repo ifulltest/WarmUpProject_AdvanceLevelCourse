@@ -1,0 +1,7 @@
+RUN	sessionpackage.BasicGetBusDetails	basicgetbusdetails	1654233810436	 	3.0.3
+USER	GetBusDetails	1	START	1654233811996	1654233811996
+USER	GetBusDetails	2	START	1654233812000	1654233812000
+REQUEST	2		getbusrequest	1654233812019	1654233812027	KO	j.n.UnknownHostException: developer.goibibo.com
+REQUEST	1		getbusrequest	1654233812018	1654233812027	KO	j.n.UnknownHostException: No such host is known (developer.goibibo.com)
+USER	GetBusDetails	1	END	1654233811996	1654233812038
+USER	GetBusDetails	2	END	1654233812000	1654233812038
